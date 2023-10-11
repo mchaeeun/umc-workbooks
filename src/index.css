@@ -13,10 +13,16 @@ body {
     grid-template-columns: repeat(8, 1fr);
     gap: 20px 20px;
 }
-.movie {
+
+.movie-block {
+    position: relative;
     background-color: #0F3460;
     border-radius: 5px;
     height: 300px;
+    overflow: hidden;
+}
+
+.movie {
     display: grid;
     grid-template-rows: 3fr 1fr;
 }
@@ -43,4 +49,30 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.movie-detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: small;
+    opacity: 0;
+}
+
+.movie-detail:hover {
+    opacity: 1;
+}
+
+.movie-detail #movie-title {
+    font-weight: bold;
+}
+
+.movie-detail span {
+    display: block;
+    margin: 15% 10% 15% 10%;
+    overflow: hidden; /* 텍스트 오버플로우 숨김 */
+    text-overflow: ellipsis; /* 텍스트가 오버플로우 될 때 ...으로 표시 */
 }
